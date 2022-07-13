@@ -1,6 +1,27 @@
-.title {
+.title-link {
     font-family: 'Edu VIC WA NT Beginner', cursive;
     font-size: 30px;
     text-align: left;
-    padding: 5px 10px; 
+}
+
+.flex-child {
+    /* border: 3px solid red; */
+    padding: 0px 10px; 
+    flex: 1;
+}
+
+.flex-child:first-child {
+    margin: 0 10px;
+}
+
+li {
+    display: inline;
+    margin: 15px 20px;
+    float: right;
+    font-size: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.container {
+    display: flex;
 }

@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 import Profile from './components/Profile';
 import './App.css';
+import SplineApp from './components/Spline';
 
 
 function App() {

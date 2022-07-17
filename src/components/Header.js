@@ -25,7 +25,7 @@ const Header = () => {
                 <li>user</li>
               </Link>
 
-              <Link to={''}>
+              <Link to={'/wardrobelist'}>
                 <li>wardrobe</li>
               </Link>
 

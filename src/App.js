@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Profile from './components/Profile';
 import './App.css';
 import SplineApp from './components/Spline';
+import WardrobeList from './components/WardrobeList';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
           <Route path='/' element={<Main />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/wardrobelist' element={<WardrobeList />} />
         
         </Routes>
       </div>

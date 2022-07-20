@@ -19,7 +19,7 @@ const NewWardrobeItem = () => {
 //----- define form data ! -----
   const [name, setName] = useState({name: ''})
   const [color, setColor] = useState({color: ''})
-  const [image, setImage] = useState({image: ''})
+  // const [image, setImage] = useState({image: ''})
   const [articleType, setArticleType] = useState({article_type: ''})
   const [category, setCategory] = useState({category: ''})
   const [brand, setBrand] = useState({brand: ''})
@@ -28,7 +28,7 @@ const NewWardrobeItem = () => {
 const handleChange = (e) => {
   setName({...name, [e.target.id]: e.target.value})
   setColor({...color, [e.target.id]: e.target.value})
-  setImage({...image, [e.target.id]: e.target.value})
+  // setImage({...image, [e.target.id]: e.target.value})
   setArticleType({...articleType, [e.target.id]: e.target.value})
   setCategory({...category, [e.target.id]: e.target.value})
   setBrand({...brand, [e.target.id]: e.target.value})
@@ -44,7 +44,7 @@ const handleChange = (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(name, color, image, articleType, category, brand, quantity)
+      body: JSON.stringify(name, color, articleType, category, brand, quantity)
     }
     fetch(url, opts)
     .then(res => res.json())
@@ -106,10 +106,13 @@ const handleChange = (e) => {
             </select>
           <label for='brand' className='input'>Brand:</label>
           <input id='brand' className='input' type='text' placeholder='brand' onChange={handleChange}/>
-          <label for='brand' className='input'>Photo:</label>
-          <input id='image' className='input' type='file' name='image' onChange={handleChange}/>
+
+          {/* <label for='brand' className='input'>Photo:</label>
+          <input id='image' className='input' type='file' name='image' accept='image/*' onChange={handleChange}/> */}
+
           <label for='quantity' className='input'>Quantity:</label>
           <input id='quantity' className='input' type='number' name='quantity' onChange={handleChange}></input>
+
           <button type='submit' className='input'>Add Item</button>
 
         </form>

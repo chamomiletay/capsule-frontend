@@ -28,11 +28,11 @@ const WardrobeList = () => {
   return (
     <div>
 
-        <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500'>
+        <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-4 border-double border-4 border-slate-500 rounded'>
             <h2 className='text-2xl font-nanum-gothic pt-2'>My Wardrobe</h2>
             
             <Link to='/newarticle'>
-              <button class='bg-blue-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md'type='button'>Add Article</button>
+              <button class='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md'type='button'>Add Article</button>
             </Link>
 
           {/*--- display each article image ---*/}

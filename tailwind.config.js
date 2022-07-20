@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'edu-vic-wa-nt-beginner': ['Edu VIC WA NT Beginner', 'cursive']
+        'edu-vic-wa-nt-beginner': ['Edu VIC WA NT Beginner', 'cursive'],
+        'nanum-gothic': ['Nanum Gothic', 'sans-serif']
       },
     },
   },

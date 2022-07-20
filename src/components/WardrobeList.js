@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import NewWardrobeItem from './NewWardrobeItem';
-import './WardrobeList.css';
+import './Main.css';
 
 //----- brain dump -----
     //- clickable objects -> link to WardrobeDetail
@@ -28,25 +28,26 @@ const WardrobeList = () => {
   return (
     <div>
 
-        <div className='wardrobe-container'>
-            <h2>My Wardrobe</h2>
+        <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500'>
+            <h2 className='text-2xl font-nanum-gothic pt-2'>My Wardrobe</h2>
+            
             <Link to='/newarticle'>
-              <button type='button'>Add Article</button>
+              <button class='bg-blue-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md'type='button'>Add Article</button>
             </Link>
 
           {/*--- display each article image ---*/}
-          <ul>
-            {
-              wardrobe.map((item, index) => {
-                return (
-                  // ---- change to item.image later ----
-                  <li key={index}>{item.name}, {item.user}</li>
-                )
-            })
-            }
-            </ul>
-
-
+          <div className='justify-center items-center w-auto p-4'>
+            <ul>
+              {
+                wardrobe.map((item, index) => {
+                  return (
+                    // ---- change to item.image later ----
+                    <li className='bg-white rounded mx-auto my-2 w-44 h-36 shadow-md p-10' key={index}>{item.name}</li>
+                  )
+              })
+              }
+              </ul>
+          </div>
         </div>
 
     </div>

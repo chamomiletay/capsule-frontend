@@ -5,6 +5,7 @@ import './NewWardrobeItem.css'
 //----- brain dump -----
     //- create new wardrobe piece via form
     //- criteria:
+        //- user
         //- name
         //- color
         //- image
@@ -17,6 +18,7 @@ import './NewWardrobeItem.css'
 const NewWardrobeItem = () => {
 
 //----- define form data ! -----
+  const [user, setUser] = useState({user: 'base_user'})
   const [name, setName] = useState({name: ''})
   const [color, setColor] = useState({color: ''})
   // const [image, setImage] = useState({image: ''})
@@ -25,7 +27,18 @@ const NewWardrobeItem = () => {
   const [brand, setBrand] = useState({brand: ''})
   const [quantity, setQuantity] = useState({quantity: ''})
 
+  // const [submitData, setSubmitData] = useState({
+  //   user:'',
+  //   name: '',
+  //   image: '',
+  //   article_type: '',
+  //   brand: '',
+  //   quantity: ''
+  // })
+
 const handleChange = (e) => {
+  // setSubmitData({...submitData, [e.target.id]: e.target.value})
+  setUser({...user, [e.target.id]: e.target.value})
   setName({...name, [e.target.id]: e.target.value})
   setColor({...color, [e.target.id]: e.target.value})
   // setImage({...image, [e.target.id]: e.target.value})
@@ -44,7 +57,7 @@ const handleChange = (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(name, color, articleType, category, brand, quantity)
+      body: JSON.stringify(user, name, color, articleType, category, brand, quantity)
     }
     fetch(url, opts)
     .then(res => res.json())
@@ -54,7 +67,7 @@ const handleChange = (e) => {
   return (
     <div>
 
-{/* ----- create new article of clothing ----- */}
+  {/* ----- create new article of clothing ----- */}
       <h3>New Clothing Article</h3>
 
       <div className='form-field'>

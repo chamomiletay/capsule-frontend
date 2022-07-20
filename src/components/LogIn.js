@@ -1,6 +1,13 @@
-import React from 'react'
+// ----- i m p o r t s ! -----
+import React, { useState } from 'react'
 import './LogIn.css'
+
+//----- brain dump -----
+    // - prompt user for username and password
+//----- end brain dump . -----
+
 const LogIn = () => {
+
   return (
     <div>
         <h2>Log In</h2>

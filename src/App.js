@@ -1,5 +1,6 @@
 // ---- i m p o r t s ! ---- //
 import { Routes, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './App.css';
 
@@ -49,6 +50,13 @@ function App() {
     <div className="App">
 
       {/* Header content below */}
+      {/* <div className='p-4 max-w-none mx-auto bg-blue-100 shadow-md flex items-center space-x-4'>
+      <h1 className='text-3xl font-medium text-black font-edu-vic-wa-nt-beginner'>Capsule .</h1> */}
+
+      {/* Header Links */}
+      
+      {/* </div> */}
+
       <Header />
 
       <div className='routes'>

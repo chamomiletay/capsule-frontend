@@ -11,7 +11,7 @@ function Main() {
     <div>
       <div className="main">
 
-        <h2>Welcome to capsule .</h2>
+        <h2 className="text-4xl">Welcome to capsule .</h2>
       
       </div>
         

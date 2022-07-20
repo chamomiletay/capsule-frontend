@@ -1,43 +1,43 @@
 //----- Imports -----//
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Header.css';
+// import './Header.css';
 
 
 const Header = () => {
   return (
-    //--- title with nav link to home ---//
-      <div className='container'>
+    
+      <div className='p-4 max-w-none mx-auto bg-blue-100 shadow-md flex items-center space-x-4'>
 
-        <div className='flex-child'>
+        {/* --- title with nav link to home --- */}
 
-          <Link to={'/'}>
-            <h1 className='title-link'>capsule .</h1>
-          </Link>
+        <Link to={'/'}>
+          <h1 className='text-3xl font-medium text-black font-edu-vic-wa-nt-beginner'>Capsule .</h1>
+        </Link>  
+
+
+        {/* ---- nav links ---- */}
+
+        <div className='flex-1'>
+          <ul>
+
+            <Link to={'/profile'}>
+              <li className='inline float-right px-4'>user</li>
+            </Link>
+
+            <Link to={'/wardrobelist'}>
+              <li className='inline float-right px-4'>wardrobe</li>
+            </Link>
+
+            <Link to={''}>
+              <li className='inline float-right px-4'>new outfit</li>
+            </Link>
+
+          </ul>
 
         </div>
-
-    {/* ---- nav links ---- */}
-        <div className='flex-child'>
-
-            <ul>
-              <Link to={'/profile'}>
-                <li>user</li>
-              </Link>
-
-              <Link to={'/wardrobelist'}>
-                <li>wardrobe</li>
-              </Link>
-
-              <Link to={''}>
-                <li>new outfit</li>
-              </Link>
-
-            </ul>
-
-        </div>
-
       </div>
+      
 
     
   )

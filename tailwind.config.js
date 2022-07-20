@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'edu-vic-wa-nt-beginner': ['Edu VIC WA NT Beginner', 'cursive']
+      },
+    },
   },
   plugins: [],
 }

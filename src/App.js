@@ -7,6 +7,7 @@ import './App.css';
 import Main from './components/Main';
 import Header from './components/Header'
 import Footer from './components/Footer';
+import LogIn from './components/LogIn';
 import Profile from './components/Profile';
 import SplineApp from './components/Spline';
 import WardrobeList from './components/WardrobeList';
@@ -55,6 +56,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/wardrobelist' element={<WardrobeList />} />
+          <Route path='/login' element={<LogIn />} />
         
         </Routes>
       </div>

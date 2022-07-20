@@ -11,6 +11,8 @@ import LogIn from './components/LogIn';
 import Profile from './components/Profile';
 import SplineApp from './components/Spline';
 import WardrobeList from './components/WardrobeList';
+import NewWardrobeItem from './components/NewWardrobeItem';
+import WardrobeDetail from './components/WardrobeDetail';
 
 
 //------ brain dump ------
@@ -54,9 +56,12 @@ function App() {
         <Routes>
 
           <Route path='/' element={<Main />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/wardrobelist' element={<WardrobeList />} />
           <Route path='/login' element={<LogIn />} />
+          <Route path='/profile/:id' element={<Profile />} />
+          <Route path='/wardrobelist' element={<WardrobeList />} />
+          <Route path='/newarticle' element={<NewWardrobeItem />} />
+          <Route path='/articledetail/:id' element={<WardrobeDetail />} />
+        
         
         </Routes>
       </div>

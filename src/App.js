@@ -10,7 +10,7 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 import LogIn from './components/LogIn';
 import Profile from './components/Profile';
-import SplineApp from './components/Spline';
+import Spline from './components/Spline';
 import WardrobeList from './components/WardrobeList';
 import NewWardrobeItem from './components/NewWardrobeItem';
 import WardrobeDetail from './components/WardrobeDetail';
@@ -58,6 +58,7 @@ function App() {
       {/* </div> */}
 
       <Header />
+      <Spline />
 
       <div className='routes'>
         {/* Render routes below*/}

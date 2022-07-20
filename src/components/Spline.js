@@ -1,16 +1,11 @@
 import Spline from '@splinetool/react-spline';
-import './Spline.css';
 
-export default function SplineApp() {
+export default function App() {
   return (
-    <div className='app-container'>
-      
-      <div className='spline-app'>
+    <div className='flex justify-center'>
 
-        <Spline scene="" />
-      
-      </div>
-    
+    <Spline scene="https://prod.spline.design/1y-wrif96UOyLWlC/scene.splinecode" />
+
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import React from "react";
 import Spline from './Spline'
 import './Main.css';
+import { Link } from "react-router-dom";
 
 //----- brain dump -----
 
@@ -9,16 +10,25 @@ import './Main.css';
 
 function Main() {
   return (
-    <div>
+    <div className="justify-center items-center p-40">
 
-      {/* render spline app */}
-      <Spline />
+      <header>
 
-      <div className="main">
+        <div className="main">
 
-        <h2 className="text-3xl font-nanum-gothic">Welcome to your capsule wardrobe.</h2>
-      
-      </div>
+        {/* render spline app */}
+        <Spline />
+
+          <h2 className="text-2xl font-nanum-gothic">Welcome to your Capsule wardrobe.</h2>
+
+          <br/>
+          <p>Already a user? 
+            <Link to='/login'> Sign in</Link>
+          </p>
+        
+        </div>
+
+      </header>
         
     </div>
   )

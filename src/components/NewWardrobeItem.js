@@ -1,6 +1,6 @@
 // ----- i m p o r t s ! -----
 import React, { useState } from 'react'
-import './NewWardrobeItem.css'
+import './Main.css'
 
 //----- brain dump -----
     //- create new wardrobe piece via form
@@ -21,8 +21,8 @@ const NewWardrobeItem = () => {
   const [user, setUser] = useState({user: 'base_user'})
   const [name, setName] = useState({name: ''})
   const [color, setColor] = useState({color: ''})
-  // const [image, setImage] = useState({image: ''})
-  const [articleType, setArticleType] = useState({article_type: ''})
+  const [image, setImage] = useState({image: ''})
+  const [article_type, setArticle_type] = useState({article_type: ''})
   const [category, setCategory] = useState({category: ''})
   const [brand, setBrand] = useState({brand: ''})
   const [quantity, setQuantity] = useState({quantity: ''})
@@ -38,11 +38,12 @@ const NewWardrobeItem = () => {
 
 const handleChange = (e) => {
   // setSubmitData({...submitData, [e.target.id]: e.target.value})
+  console.log(e.target.id, e.target.value)
   setUser({...user, [e.target.id]: e.target.value})
   setName({...name, [e.target.id]: e.target.value})
   setColor({...color, [e.target.id]: e.target.value})
-  // setImage({...image, [e.target.id]: e.target.value})
-  setArticleType({...articleType, [e.target.id]: e.target.value})
+  setImage({image: e.target.files[0]})
+  setArticle_type({...article_type, [e.target.id]: e.target.value})
   setCategory({...category, [e.target.id]: e.target.value})
   setBrand({...brand, [e.target.id]: e.target.value})
   setQuantity({...quantity, [e.target.id]: e.target.value})
@@ -50,14 +51,25 @@ const handleChange = (e) => {
 
 //----- handle form submission -----
   const handleSubmit = (e) => {
+    console.log(color)
     e.preventDefault()
+    let formData = new FormData()
+    formData.append('user', user.user)
+    formData.append('name', name.name)
+    formData.append('color', color.color)
+    formData.append('article_type', article_type.article_type)
+    formData.append('category', category.category)
+    formData.append('brand', brand.brand)
+    formData.append('quantity', quantity.quantity)
+    formData.append('image', image.image)
     const url = process.env.REACT_APP_API_URL + 'wardrobe/'
     const opts = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data, image/jpeg',
       },
-      body: JSON.stringify(user, name, color, articleType, category, brand, quantity)
+      // body: JSON.stringify(user, name, color, articleType, category, brand, quantity)
+      body: formData
     }
     fetch(url, opts)
     .then(res => res.json())
@@ -65,19 +77,19 @@ const handleChange = (e) => {
   }
   
   return (
-    <div>
+    <div className='m-10'>
 
   {/* ----- create new article of clothing ----- */}
-      <h3>New Clothing Article</h3>
+      <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>New Clothing Article</h3>
 
-      <div className='form-field'>
+      <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
 
         <form onSubmit={handleSubmit}>
 
-          <label for='name' className='input'>Article Name:</label>
-          <input id='name' className='input' type='text' placeholder='article name' onChange={handleChange}/>
-          <label for='color' className='input'>Color:</label>
-            <select id='color' className='input' name='color' onChange={handleChange}>
+          <label for='name' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>ARTICLE NAME:</label>
+          <input id='name' className='flex justify-center justify-items-center m-auto p-2 shadow-md rounded font-nanum-gothic mb-4' type='text' placeholder='article name' onChange={handleChange}/>
+          <label for='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>COLOR:</label>
+            <select id='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='color' onChange={handleChange}>
               <option value='1'>Red</option>
               <option value='2'>Orange</option>
               <option value='3'>Yellow</option>
@@ -94,8 +106,8 @@ const handleChange = (e) => {
               <option value='14'>Tan</option>
               <option value='15'>Multi</option>
             </select>
-          <label for='article_type' className='input'>Type:</label>
-            <select id='article_type' className='input' name='article_type' onChange={handleChange}>
+          <label for='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>TYPE:</label>
+            <select id='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='article_type' onChange={handleChange}>
               <option value='1'>Top</option>
               <option value='2'>Bottoms</option>
               <option value='3'>Dress</option>
@@ -109,24 +121,24 @@ const handleChange = (e) => {
               <option value='11'>Accessory</option>
               <option value='12'>Socks/Tights</option>
             </select>
-          <label for='category' className='input'>Category:</label>
-            <select id='category' className='input' name='category' onChange={handleChange}>
+          <label for='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>CATEGORY:</label>
+            <select id='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='category' onChange={handleChange}>
               <option value='1'>Loungewear</option>
               <option value='2'>Casual</option>
               <option value='3'>Formal</option>
               <option value='4'>Party</option>
               <option value='5'>Work</option>
             </select>
-          <label for='brand' className='input'>Brand:</label>
-          <input id='brand' className='input' type='text' placeholder='brand' onChange={handleChange}/>
+          <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>BRAND:</label>
+          <input id='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='text' placeholder='brand' onChange={handleChange}/>
 
-          {/* <label for='brand' className='input'>Photo:</label>
-          <input id='image' className='input' type='file' name='image' accept='image/*' onChange={handleChange}/> */}
+          <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>PHOTO:</label>
+          <input id='image' className='flex justify-center justify-items-center m-auto py-2 pl-60 font-nanum-gothic' type='file' name='image' accept='image/*' onChange={handleChange}/>
 
-          <label for='quantity' className='input'>Quantity:</label>
-          <input id='quantity' className='input' type='number' name='quantity' onChange={handleChange}></input>
+          <label for='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>QUANTITY:</label>
+          <input id='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='number' name='quantity' onChange={handleChange}></input>
 
-          <button type='submit' className='input'>Add Item</button>
+          <button type='submit' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic bg-blue-100 shadow-md rounded border-solid border-2 border-blue-500 font-bold text-slate-700'>Add Item</button>
 
         </form>
 

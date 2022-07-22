@@ -42,7 +42,7 @@ const WardrobeList = () => {
                 wardrobe.map((item, index) => {
                   return (
                     // ---- change to item.image later ----
-                    <li className='bg-white rounded mx-auto my-2 w-44 h-36 shadow-md p-10' key={index}>{item.name}</li>
+                    <li className='bg-white rounded mx-auto my-2 w-44 h-36 shadow-md p-10' key={index}>{item.image}</li>
                   )
               })
               }

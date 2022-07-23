@@ -8,10 +8,10 @@ import './Main.css';
     //- add wardrobe item button on page -> links to NewWardrobeItem
 //----- end brain dump . -----
 
-const WardrobeList = ({userSignedIn, accessToken}) => {
+const WardrobeList = () => {
 
   //--- retreive data ---
-  const wardrobeRestEndpoint = 'create'
+  const wardrobeRestEndpoint = 'wardrobe'
   const [wardrobe, setWardrobe] = useState([])
 
   useEffect(() => {
@@ -27,8 +27,8 @@ const WardrobeList = ({userSignedIn, accessToken}) => {
   return (
     <div>
 
-        <div className='justify-center items-center bg-red-50 max-w-none m-16 max-h-500 py-4 border-double border-4 border-slate-500 rounded'>
-            <h2 className='text-2xl font-nanum-gothic pt-2'>My Wardrobe</h2>
+        <div className='justify-center items-center bg-plants max-w-none m-16 max-h-500 py-4 border-double border-4 border-slate-500 rounded shadow-md'>
+            <h2 className='text-3xl font-edu-vic-wa-nt-beginner pt-2'>My Wardrobe</h2>
             
             <Link to='/newarticle'>
               <button class='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md'type='button'>Add Article</button>

@@ -45,14 +45,17 @@ const handleChange = (e) => {
 
 //----- handle form submission -----
   const handleSubmit = (e) => {
+
     e.preventDefault()
+
+  //--- redirect upon submit ---
     navigate('/wardrobelist')
-    const url = process.env.REACT_APP_API_URL + 'create/'
+    const url = process.env.REACT_APP_API_URL + 'wardrobe/'
     const opts = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`
+        // 'Authorization': `Bearer ${accessToken}`
       },
       body: JSON.stringify(user, name, color, article_type, category, brand, quantity)
       // body: formData
@@ -68,12 +71,15 @@ const handleChange = (e) => {
   {/* ----- create new article of clothing ----- */}
       <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>New Clothing Article</h3>
 
-      <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
+      <div className='justify-center items-center bg-plants max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded shadow-md'>
 
         <form onSubmit={handleSubmit}>
 
+          {/* -- article name -- */}
           <label for='name' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>ARTICLE NAME:</label>
           <input id='name' className='flex justify-center justify-items-center m-auto p-2 shadow-md rounded font-nanum-gothic mb-4' type='text' placeholder='article name' onChange={handleChange}/>
+
+          {/* -- article color -- */}
           <label for='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>COLOR:</label>
             <select id='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='color' onChange={handleChange}>
               <option value='1'>Red</option>
@@ -92,6 +98,8 @@ const handleChange = (e) => {
               <option value='14'>Tan</option>
               <option value='15'>Multi</option>
             </select>
+
+            {/* -- article type -- */}
           <label for='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>TYPE:</label>
             <select id='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='article_type' onChange={handleChange}>
               <option value='1'>Top</option>
@@ -107,6 +115,8 @@ const handleChange = (e) => {
               <option value='11'>Accessory</option>
               <option value='12'>Socks/Tights</option>
             </select>
+
+            {/* -- category -- */}
           <label for='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>CATEGORY:</label>
             <select id='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='category' onChange={handleChange}>
               <option value='1'>Loungewear</option>
@@ -115,12 +125,15 @@ const handleChange = (e) => {
               <option value='4'>Party</option>
               <option value='5'>Work</option>
             </select>
+
+            {/* -- clothing brand -- */}
           <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>BRAND:</label>
           <input id='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='text' placeholder='brand' onChange={handleChange}/>
 
           {/* <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>PHOTO:</label>
           <input id='image' className='flex justify-center justify-items-center m-auto py-2 pl-60 font-nanum-gothic' type='file' name='image' accept='image/*' onChange={handleChange}/> */}
 
+            {/* -- quantity -- */}
           <label for='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>QUANTITY:</label>
           <input id='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='number' name='quantity' onChange={handleChange}></input>
 

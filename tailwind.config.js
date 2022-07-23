@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'florals': "url('/images/bg.png')",
-        'plants': "url('/images/plant.jpg')"
+        'plants': "url('/images/plant.jpg')",
+        'nature': "url('/images/nature.jpg')"
       },
       fontFamily: {
         'edu-vic-wa-nt-beginner': ['Edu VIC WA NT Beginner', 'cursive'],

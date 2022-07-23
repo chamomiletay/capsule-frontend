@@ -21,8 +21,8 @@ const Header = () => {
         <div className='flex-1'>
           <ul>
 
-            <Link to={'/profile'}>
-              <li className='inline float-right px-4'>user</li>
+            <Link to={'/login'}>
+              <li className='inline float-right px-4'>log in</li>
             </Link>
 
             <Link to={'/wardrobelist'}>

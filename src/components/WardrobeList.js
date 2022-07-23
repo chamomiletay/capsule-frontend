@@ -28,7 +28,7 @@ const WardrobeList = ({userSignedIn, accessToken}) => {
   return (
     <div>
 
-        <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-4 border-double border-4 border-slate-500 rounded'>
+        <div className='justify-center items-center bg-red-50 max-w-none m-16 max-h-500 py-4 border-double border-4 border-slate-500 rounded'>
             <h2 className='text-2xl font-nanum-gothic pt-2'>My Wardrobe</h2>
             
             <Link to='/newarticle'>

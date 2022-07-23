@@ -12,7 +12,7 @@ import './Main.css';
 const WardrobeList = () => {
 
   //--- retreive data ---
-  const wardrobeRestEndpoint = 'wardrobe'
+  const wardrobeRestEndpoint = 'create'
   const [wardrobe, setWardrobe] = useState([])
 
   useEffect(() => {
@@ -42,7 +42,10 @@ const WardrobeList = () => {
                 wardrobe.map((item, index) => {
                   return (
                     // ---- change to item.image later ----
-                    <li className='bg-white rounded mx-auto my-2 w-44 h-36 shadow-md p-10' key={index}>{item.image}</li>
+                    <li className='font-nanum-gothic border-solid border-2 border-slate-400 bg-white rounded mx-auto my-2 w-44 h-36 shadow-md p-10 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-orange-200 duration-300' key={index}>
+                    <Link to={`/articledetail/${item.id}`} key={item.id}>{item.name}</Link>  
+                      
+                      </li>
                   )
               })
               }

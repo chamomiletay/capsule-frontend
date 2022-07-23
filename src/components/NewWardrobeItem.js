@@ -42,7 +42,7 @@ const handleChange = (e) => {
   setUser({...user, [e.target.id]: e.target.value})
   setName({...name, [e.target.id]: e.target.value})
   setColor({...color, [e.target.id]: e.target.value})
-  setImage({image: e.target.files[0]})
+  // setImage({image: e.target.files[0]})
   setArticle_type({...article_type, [e.target.id]: e.target.value})
   setCategory({...category, [e.target.id]: e.target.value})
   setBrand({...brand, [e.target.id]: e.target.value})
@@ -53,23 +53,25 @@ const handleChange = (e) => {
   const handleSubmit = (e) => {
     console.log(color)
     e.preventDefault()
-    let formData = new FormData()
-    formData.append('user', user.user)
-    formData.append('name', name.name)
-    formData.append('color', color.color)
-    formData.append('article_type', article_type.article_type)
-    formData.append('category', category.category)
-    formData.append('brand', brand.brand)
-    formData.append('quantity', quantity.quantity)
-    formData.append('image', image.image)
-    const url = process.env.REACT_APP_API_URL + 'wardrobe/'
+    // let formData = new FormData()
+    // formData.append('user', user.user)
+    // formData.append('name', name.name)
+    // formData.append('color', color.color)
+    // formData.append('article_type', article_type.article_type)
+    // formData.append('category', category.category)
+    // formData.append('brand', brand.brand)
+    // formData.append('quantity', quantity.quantity)
+    // formData.append('image', image.image)
+    // const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTQ3NzE1LCJpYXQiOjE2NTg1NDc0MTUsImp0aSI6IjgxMGU5ZDk3MjRjMTQyOThiNDFmYmE4ODQyY2ZjNDU5IiwidXNlcl9pZCI6MX0.eRGJDm6E8Qhr-EiRdB7GOhZ0fwmVDWh_TjAtOUAR76U'
+    const url = process.env.REACT_APP_API_URL + 'create/'
     const opts = {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data, image/jpeg',
+        'Content-Type': 'application/json',
+        // 'Authorization': `Bearer ${token}`
       },
-      // body: JSON.stringify(user, name, color, articleType, category, brand, quantity)
-      body: formData
+      body: JSON.stringify(user, name, color, article_type, category, brand, quantity)
+      // body: formData
     }
     fetch(url, opts)
     .then(res => res.json())
@@ -132,8 +134,8 @@ const handleChange = (e) => {
           <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>BRAND:</label>
           <input id='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='text' placeholder='brand' onChange={handleChange}/>
 
-          <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>PHOTO:</label>
-          <input id='image' className='flex justify-center justify-items-center m-auto py-2 pl-60 font-nanum-gothic' type='file' name='image' accept='image/*' onChange={handleChange}/>
+          {/* <label for='brand' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>PHOTO:</label>
+          <input id='image' className='flex justify-center justify-items-center m-auto py-2 pl-60 font-nanum-gothic' type='file' name='image' accept='image/*' onChange={handleChange}/> */}
 
           <label for='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>QUANTITY:</label>
           <input id='quantity' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' type='number' name='quantity' onChange={handleChange}></input>

@@ -1,6 +1,6 @@
 //----- Imports -----//
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Main.css';
 
 //----- brain dump -----
@@ -11,11 +11,10 @@ import './Main.css';
 
 const WardrobeDetail = () => {
 
-  let {id} = useParams()
-
   //--- retreive data ---
   const wardrobeRestEndpoint = 'create/'
   const [wardrobe, setWardrobe] = useState([])
+
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL + wardrobeRestEndpoint)
@@ -34,6 +33,8 @@ const WardrobeDetail = () => {
     <div>
         WardrobeDetail
         <p>Name:{wardrobe.name}</p>
+
+        <Link className='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md' to='/wardrobelist'>Back</Link>
     </div>
 
   )

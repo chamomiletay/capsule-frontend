@@ -1,6 +1,5 @@
 // ---- i m p o r t s ! ---- //
 import { Routes, Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './App.css';
 
@@ -10,7 +9,6 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 import LogIn from './components/LogIn';
 import Profile from './components/Profile';
-import Spline from './components/Spline';
 import WardrobeList from './components/WardrobeList';
 import NewWardrobeItem from './components/NewArticleForm';
 import WardrobeDetail from './components/WardrobeDetail';
@@ -52,14 +50,17 @@ function App() {
 
       <Header />
       
-
+      {userLoggedIn ? (
+        <p>Welcome, {userLoggedIn}</p>
+      ): null 
+      }
       <div className='routes'>
         {/* Render routes below*/}
         <Routes>
 
           <Route path='/' element={<Main />} />
           <Route path='/login' element={<LogIn />} />
-          <Route path='/profile/:id' element={<Profile />} />
+          <Route path='/profile/:id' element={<Profile setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken}/>} />
           <Route path='/wardrobelist' element={<WardrobeList accessToken={accessToken}/>} />
           <Route path='/newarticle' element={<NewWardrobeItem />} />
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />

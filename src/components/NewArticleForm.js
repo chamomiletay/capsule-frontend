@@ -24,7 +24,7 @@ const NewArticleForm = ({accessToken}) => {
   const [user, setUser] = useState({user: 'base_user'})
   const [name, setName] = useState({name: ''})
   const [color, setColor] = useState({color: ''})
-  const [image, setImage] = useState({image: ''})
+  // const [image, setImage] = useState({image: ''})
   const [article_type, setArticle_type] = useState({article_type: ''})
   const [category, setCategory] = useState({category: ''})
   const [brand, setBrand] = useState({brand: ''})

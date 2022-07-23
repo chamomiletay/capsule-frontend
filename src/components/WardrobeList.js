@@ -1,7 +1,6 @@
 // ----- i m p o r t s ! -----
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import NewWardrobeItem from './NewArticleForm';
 import './Main.css';
 
 //----- brain dump -----

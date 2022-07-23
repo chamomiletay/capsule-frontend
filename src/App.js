@@ -1,6 +1,6 @@
 // ---- i m p o r t s ! ---- //
 import { Routes, Route } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css';
 
 //-- component imports -- //
@@ -24,8 +24,8 @@ import WardrobeDetail from './components/WardrobeDetail';
 function App() {
 
   //--- user authentication checkpoint --- 
-  const [userLoggedIn, setUserLoggedIn] = useState(localStorage.getItem('user'))
-  const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
+  // const [userLoggedIn, setUserLoggedIn] = useState(localStorage.getItem('user'))
+  // const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
 
 //--- fetch wardrobe data (protected) ---
   // useEffect(() => {

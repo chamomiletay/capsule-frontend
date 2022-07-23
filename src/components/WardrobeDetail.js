@@ -10,10 +10,10 @@ import './Main.css';
 
 
 const WardrobeDetail = () => {
-  let {id} = useParams();
+
 
   //--- retreive data ---
-  const wardrobeRestEndpoint = `wardrobe/${id}`
+  const wardrobeRestEndpoint = 'wardrobe'
   const [wardrobe, setWardrobe] = useState([])
 
 

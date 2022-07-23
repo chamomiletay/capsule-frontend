@@ -3,8 +3,10 @@ import './Main.css'
 
 const Footer = () => {
   return (
-    <div className='p-4 bg-blue-100 shadow-md space-x-4 fixed bottom-0 max-w-lg'>
-      <p>Capsule Ⓒ Taylor Lee 2022.</p>
+    <div className='flex flex-col h-screen justify-between'>
+      <footer className='h-12 bg-blue-100 shadow-md bottom-0 fixed w-full'>
+        <p className='p-3'>Copyright Ⓒ 2022 Taylor Lee. All rights reserved.</p>
+      </footer>
     </div>
   )
 }

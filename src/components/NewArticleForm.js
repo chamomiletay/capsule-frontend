@@ -16,7 +16,7 @@ import './Main.css'
         //- quantity
 //----- end brain dump . -----
 
-const NewArticleForm = () => {
+const NewArticleForm = ({accessToken}) => {
 
   const navigate = useNavigate()
 
@@ -47,13 +47,12 @@ const handleChange = (e) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     navigate('/wardrobelist')
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3Mjc0LCJpYXQiOjE2NTg1NjY5NzQsImp0aSI6IjcwMGNhNjQ0MTk0ZTQ1MzU4ODhmNjU5NzMxN2E1M2I5IiwidXNlcl9pZCI6MX0.Kug9ILabCBsCVfusiu94VUcEhQ3KaCIm5RlMnWO5mY0'
     const url = process.env.REACT_APP_API_URL + 'create/'
     const opts = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${accessToken}`
       },
       body: JSON.stringify(user, name, color, article_type, category, brand, quantity)
       // body: formData

@@ -9,7 +9,7 @@ import './Main.css';
     //- add wardrobe item button on page -> links to NewWardrobeItem
 //----- end brain dump . -----
 
-const WardrobeList = () => {
+const WardrobeList = ({userSignedIn, accessToken}) => {
 
   //--- retreive data ---
   const wardrobeRestEndpoint = 'create'

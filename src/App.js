@@ -31,7 +31,7 @@ function App() {
 
 //--- fetch wardrobe data (protected) ---
   useEffect(() => {
-    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4MjY3MTUwLCJpYXQiOjE2NTgyNjY4NTAsImp0aSI6IjcyMzkzNDcwYWNhODQyOGFiNWExMzg5MzY2ZmIxZjBiIiwidXNlcl9pZCI6MX0.MPSyPjoBmtl3ZZOWdjJ3XRA26wzVHsGB8aKMXuzStQw'
+    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3Mjc0LCJpYXQiOjE2NTg1NjY5NzQsImp0aSI6IjcwMGNhNjQ0MTk0ZTQ1MzU4ODhmNjU5NzMxN2E1M2I5IiwidXNlcl9pZCI6MX0.Kug9ILabCBsCVfusiu94VUcEhQ3KaCIm5RlMnWO5mY0'
     const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
     const opts = {
       method: 'GET',
@@ -60,7 +60,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/login' element={<LogIn />} />
           <Route path='/profile/:id' element={<Profile />} />
-          <Route path='/wardrobelist' element={<WardrobeList />} />
+          <Route path='/wardrobelist' element={<WardrobeList accessToken={accessToken}/>} />
           <Route path='/newarticle' element={<NewWardrobeItem />} />
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />
         

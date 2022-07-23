@@ -12,7 +12,7 @@ import LogIn from './components/LogIn';
 import Profile from './components/Profile';
 import Spline from './components/Spline';
 import WardrobeList from './components/WardrobeList';
-import NewWardrobeItem from './components/NewWardrobeItem';
+import NewWardrobeItem from './components/NewArticleForm';
 import WardrobeDetail from './components/WardrobeDetail';
 
 

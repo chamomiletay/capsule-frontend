@@ -1,5 +1,6 @@
 // ----- i m p o r t s ! -----
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Main.css'
 
 //----- brain dump -----
@@ -15,7 +16,9 @@ import './Main.css'
         //- quantity
 //----- end brain dump . -----
 
-const NewWardrobeItem = () => {
+const NewArticleForm = () => {
+
+  const navigate = useNavigate()
 
 //----- define form data ! -----
   const [user, setUser] = useState({user: 'base_user'})
@@ -26,15 +29,6 @@ const NewWardrobeItem = () => {
   const [category, setCategory] = useState({category: ''})
   const [brand, setBrand] = useState({brand: ''})
   const [quantity, setQuantity] = useState({quantity: ''})
-
-  // const [submitData, setSubmitData] = useState({
-  //   user:'',
-  //   name: '',
-  //   image: '',
-  //   article_type: '',
-  //   brand: '',
-  //   quantity: ''
-  // })
 
 const handleChange = (e) => {
   // setSubmitData({...submitData, [e.target.id]: e.target.value})
@@ -51,24 +45,15 @@ const handleChange = (e) => {
 
 //----- handle form submission -----
   const handleSubmit = (e) => {
-    console.log(color)
     e.preventDefault()
-    // let formData = new FormData()
-    // formData.append('user', user.user)
-    // formData.append('name', name.name)
-    // formData.append('color', color.color)
-    // formData.append('article_type', article_type.article_type)
-    // formData.append('category', category.category)
-    // formData.append('brand', brand.brand)
-    // formData.append('quantity', quantity.quantity)
-    // formData.append('image', image.image)
-    // const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTQ3NzE1LCJpYXQiOjE2NTg1NDc0MTUsImp0aSI6IjgxMGU5ZDk3MjRjMTQyOThiNDFmYmE4ODQyY2ZjNDU5IiwidXNlcl9pZCI6MX0.eRGJDm6E8Qhr-EiRdB7GOhZ0fwmVDWh_TjAtOUAR76U'
+    navigate('/wardrobelist')
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3Mjc0LCJpYXQiOjE2NTg1NjY5NzQsImp0aSI6IjcwMGNhNjQ0MTk0ZTQ1MzU4ODhmNjU5NzMxN2E1M2I5IiwidXNlcl9pZCI6MX0.Kug9ILabCBsCVfusiu94VUcEhQ3KaCIm5RlMnWO5mY0'
     const url = process.env.REACT_APP_API_URL + 'create/'
     const opts = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(user, name, color, article_type, category, brand, quantity)
       // body: formData
@@ -151,4 +136,4 @@ const handleChange = (e) => {
   )
 }
 
-export default NewWardrobeItem
+export default NewArticleForm

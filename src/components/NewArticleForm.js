@@ -21,26 +21,22 @@ const NewArticleForm = ({accessToken}) => {
   const navigate = useNavigate()
 
 //----- define form data ! -----
-  const [user, setUser] = useState({user: 'base_user'})
-  const [name, setName] = useState({name: ''})
-  const [color, setColor] = useState({color: ''})
+  const [formData, setFormData] = useState({
+    user:'base_user',
+    name:'',
+    color:'',
+    article_type:'',
+    category:'',
+    brand:'',
+    quantity:''
+  })
+
   // const [image, setImage] = useState({image: ''})
-  const [article_type, setArticle_type] = useState({article_type: ''})
-  const [category, setCategory] = useState({category: ''})
-  const [brand, setBrand] = useState({brand: ''})
-  const [quantity, setQuantity] = useState({quantity: ''})
 
 const handleChange = (e) => {
-  // setSubmitData({...submitData, [e.target.id]: e.target.value})
+  setFormData({...formData, [e.target.id]: e.target.value})
   console.log(e.target.id, e.target.value)
-  setUser({...user, [e.target.id]: e.target.value})
-  setName({...name, [e.target.id]: e.target.value})
-  setColor({...color, [e.target.id]: e.target.value})
   // setImage({image: e.target.files[0]})
-  setArticle_type({...article_type, [e.target.id]: e.target.value})
-  setCategory({...category, [e.target.id]: e.target.value})
-  setBrand({...brand, [e.target.id]: e.target.value})
-  setQuantity({...quantity, [e.target.id]: e.target.value})
 }
 
 //----- handle form submission -----
@@ -57,7 +53,7 @@ const handleChange = (e) => {
         'Content-Type': 'application/json',
         // 'Authorization': `Bearer ${accessToken}`
       },
-      body: JSON.stringify(user, name, color, article_type, category, brand, quantity)
+      body: JSON.stringify(formData)
       // body: formData
     }
     fetch(url, opts)

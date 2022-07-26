@@ -27,12 +27,13 @@ const WardrobeDetail = () => {
     .catch(console.error)
   }, [])
 
+  console.log(wardrobe[0].name)
 
   return (
 
     <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
       <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>Wardrobe Detail</h3>
-        <p>Name:{wardrobe[0].name}</p>
+        Name:{wardrobe[0].id}
 
         <Link className='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md' to='/wardrobelist'>Back</Link>
     </div>

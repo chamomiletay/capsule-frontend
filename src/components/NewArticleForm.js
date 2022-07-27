@@ -78,48 +78,48 @@ const handleChange = (e) => {
           {/* -- article color -- */}
           <label for='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>COLOR:</label>
             <select id='color' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='color' onChange={handleChange}>
-              <option value='1'>Red</option>
-              <option value='2'>Orange</option>
-              <option value='3'>Yellow</option>
-              <option value='4'>Blue</option>
-              <option value='5'>Green</option>
-              <option value='6'>White</option>
-              <option value='7'>Beige</option>
-              <option value='8'>Cream</option>
-              <option value='9'>Black</option>
-              <option value='10'>Purple</option>
-              <option value='11'>Pink</option>
-              <option value='12'>Gray</option>
-              <option value='13'>Brown</option>
-              <option value='14'>Tan</option>
-              <option value='15'>Multi</option>
+              <option value='Red'>Red</option>
+              <option value='Orange'>Orange</option>
+              <option value='Yellow'>Yellow</option>
+              <option value='Blue'>Blue</option>
+              <option value='Green'>Green</option>
+              <option value='White'>White</option>
+              <option value='Beige'>Beige</option>
+              <option value='Cream'>Cream</option>
+              <option value='Black'>Black</option>
+              <option value='Purple'>Purple</option>
+              <option value='Pink'>Pink</option>
+              <option value='Gray'>Gray</option>
+              <option value='Brown'>Brown</option>
+              <option value='Tan'>Tan</option>
+              <option value='Multi'>Multi</option>
             </select>
 
             {/* -- article type -- */}
           <label for='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>TYPE:</label>
             <select id='article_type' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='article_type' onChange={handleChange}>
-              <option value='1'>Top</option>
-              <option value='2'>Bottoms</option>
-              <option value='3'>Dress</option>
-              <option value='4'>Jumpsuit/Romper</option>
-              <option value='5'>Sweater</option>
-              <option value='6'>Cardigan</option>
-              <option value='7'>Outerwear</option>
-              <option value='8'>Bodysuit</option>
-              <option value='9'>Lingerie</option>
-              <option value='10'>Shoes</option>
-              <option value='11'>Accessory</option>
-              <option value='12'>Socks/Tights</option>
+              <option value='Top'>Top</option>
+              <option value='Bottoms'>Bottoms</option>
+              <option value='Dress'>Dress</option>
+              <option value='Jumpsuit/Romper'>Jumpsuit/Romper</option>
+              <option value='Sweater'>Sweater</option>
+              <option value='Cardigan'>Cardigan</option>
+              <option value='Outerwear'>Outerwear</option>
+              <option value='Bodysuit'>Bodysuit</option>
+              <option value='Lingerie'>Lingerie</option>
+              <option value='Shoes'>Shoes</option>
+              <option value='Accessory'>Accessory</option>
+              <option value='Socks/Tights'>Socks/Tights</option>
             </select>
 
             {/* -- category -- */}
           <label for='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic'>CATEGORY:</label>
             <select id='category' className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic mb-4 shadow-md rounded' name='category' onChange={handleChange}>
-              <option value='1'>Loungewear</option>
-              <option value='2'>Casual</option>
-              <option value='3'>Formal</option>
-              <option value='4'>Party</option>
-              <option value='5'>Work</option>
+              <option value='Loungewear'>Loungewear</option>
+              <option value='Casual'>Casual</option>
+              <option value='Formal'>Formal</option>
+              <option value='Party'>Party</option>
+              <option value='Work'>Work</option>
             </select>
 
             {/* -- clothing brand -- */}

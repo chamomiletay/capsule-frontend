@@ -1,6 +1,6 @@
 //----- Imports -----//
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './Main.css';
 
 //----- brain dump -----
@@ -10,7 +10,7 @@ import './Main.css';
 
 
 const WardrobeDetail = () => {
-
+  let {id} = useParams()
 
   //--- retreive data ---
   const wardrobeRestEndpoint = 'wardrobe'
@@ -18,24 +18,30 @@ const WardrobeDetail = () => {
 
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + wardrobeRestEndpoint)
+
+    fetch(`http://localhost:8000/wardrobe/${id}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       setWardrobe(data)
+      console.log(data)
     })
     .catch(console.error)
   }, [])
 
-  console.log(wardrobe[0].name)
+  // console.log(wardrobe[0].name)
 
   return (
 
     <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
-      <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>Wardrobe Detail</h3>
-        Name:{wardrobe[0].id}
+      <h2 className='font-edu-vic-wa-nt-beginner text-3xl'>{wardrobe.name}</h2>
+        
+      <p>Color: {wardrobe.color}</p>
+      <p>Type: {wardrobe.article_type}</p>
+      <p>Category: {wardrobe.category}</p>
+      <p>Brand: {wardrobe.brand}</p>
+      <p>Quantity: {wardrobe.quantity}</p>
 
-        <Link className='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md' to='/wardrobelist'>Back</Link>
+      <Link className='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md' to='/wardrobelist'>Back</Link>
     </div>
 
   )

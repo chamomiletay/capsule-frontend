@@ -12,6 +12,7 @@ import Profile from './components/Profile';
 import WardrobeList from './components/WardrobeList';
 import NewWardrobeItem from './components/NewArticleForm';
 import WardrobeDetail from './components/WardrobeDetail';
+import RandomOutfitForm from './components/RandomOutfit';
 
 
 //------ brain dump ------
@@ -66,6 +67,7 @@ function App() {
           <Route path='/wardrobelist' element={<WardrobeList />} />
           <Route path='/newarticle' element={<NewWardrobeItem />} />
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />
+          <Route path='/randomoutfitform' element={<RandomOutfitForm />} />
         
         
         </Routes>

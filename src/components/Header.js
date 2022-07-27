@@ -29,7 +29,7 @@ const Header = () => {
               <li className='inline float-right px-4'>wardrobe</li>
             </Link>
 
-            <Link to={''}>
+            <Link to={'/randomoutfitform'}>
               <li className='inline float-right px-4'>new outfit</li>
             </Link>
 

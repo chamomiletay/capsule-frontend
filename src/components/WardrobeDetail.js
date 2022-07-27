@@ -1,6 +1,6 @@
 //----- Imports -----//
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import './Main.css';
 
 //----- brain dump -----
@@ -15,7 +15,7 @@ const WardrobeDetail = () => {
   //--- retreive data ---
   const wardrobeRestEndpoint = 'wardrobe'
   const [wardrobe, setWardrobe] = useState([])
-
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -30,6 +30,16 @@ const WardrobeDetail = () => {
 
   // console.log(wardrobe[0].name)
 
+
+  //--- delete data ---
+
+  const deleteArticle = async () => {
+    await fetch(`http://localhost:8000/wardrobe/${id}`, {
+      method: 'DELETE',
+    })
+    navigate('/wardrobelist')
+  }
+
   return (
 
     <div className='justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
@@ -41,6 +51,8 @@ const WardrobeDetail = () => {
       <p>Brand: {wardrobe.brand}</p>
       <p>Quantity: {wardrobe.quantity}</p>
 
+
+      <button onClick={deleteArticle}>Delete</button>
       <Link className='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md' to='/wardrobelist'>Back</Link>
     </div>
 

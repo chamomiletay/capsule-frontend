@@ -10,12 +10,25 @@ import './Main.css';
 
 const WardrobeList = () => {
 
+  //--- auth data ---
+  const [userSignedIn, setUserSignedIn] = useState(localStorage.getItem('user'))
+  const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
+
   //--- retreive data ---
   const wardrobeRestEndpoint = 'wardrobe'
   const [wardrobe, setWardrobe] = useState([])
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + wardrobeRestEndpoint)
+    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MDk2ODI0LCJpYXQiOjE2NTkwOTY1MjQsImp0aSI6ImMyYmRmYjQyOTAxZTRiZDg4MjBjZjBiMGU3ZTgyNzc0IiwidXNlcl9pZCI6MX0.fSDBYplneXl-SOqTlaRRdvfgqXsRzqlNeTmajQGB3iM'
+    const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
+    const opts = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }
+    fetch(url, opts)
     .then(res => res.json())
     .then(data => {
       console.log(data)

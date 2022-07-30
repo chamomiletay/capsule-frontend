@@ -64,7 +64,7 @@ function App() {
 
           <Route path='/profile/:id' element={<Profile userLoggedIn={userLoggedIn}/>} />
 
-          <Route path='/wardrobelist' element={userLoggedIn ? <WardrobeList userLoggedIn={userLoggedIn} accessToken={accessToken}/> : <p>Sign in to access your wardrobe!</p>} />
+          <Route path='/wardrobelist' element={userLoggedIn ? <WardrobeList userLoggedIn={userLoggedIn} accessToken={accessToken}/> : <p>Oops! Sign in to access your wardrobe!</p>} />
 
           {/* <Route path='/wardrobelist' element={<WardrobeList />} /> */}
 
@@ -72,7 +72,7 @@ function App() {
 
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />
 
-          <Route path='/randomoutfitform' element={userLoggedIn ? <RandomOutfitForm accessToken={accessToken}/> : <p>Sign in to access your wardrobe!</p>} />
+          <Route path='/randomoutfitform' element={userLoggedIn ? <RandomOutfitForm accessToken={accessToken}/> : <p>Oops! Sign in to access your wardrobe!</p>} />
 
           <Route path='/edit_article/:id' element={<EditArticle userLoggedIn={userLoggedIn}/>} />
         

@@ -23,8 +23,8 @@ const WardrobeDetail = ({accessToken}) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
-    const url = `https://capsule-capstone.herokuapp.com/wardrobe/${id}`
+   const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
+    // const url = `https://capsule-capstone.herokuapp.com/wardrobe/${id}`
     const opts = {
       method: 'GET',
       headers: {
@@ -38,7 +38,7 @@ const WardrobeDetail = ({accessToken}) => {
       console.log(data)
     })
     .catch(console.error)
-  }, )
+  }, ) 
 
   // console.log(wardrobe[0].name)
 

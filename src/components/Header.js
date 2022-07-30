@@ -22,8 +22,8 @@ const Header = ({userLoggedIn}) => {
           <ul>
 
             {/* display link as username if logged in */}
-            <Link to={ userLoggedIn ? `/profile/${userLoggedIn}` : '/login/'}>
-              {userLoggedIn ? <li className='inline float-right px-4'>{userLoggedIn}</li> : <li className='inline float-right px-4'>log in</li>}
+            <Link to={ userLoggedIn ? `/my_outfits` : '/login/'}>
+              {userLoggedIn ? <li className='inline float-right px-4'>hi, {userLoggedIn}!</li> : <li className='inline float-right px-4'>log in</li>}
             </Link>
 
 
@@ -31,8 +31,8 @@ const Header = ({userLoggedIn}) => {
               <li className='inline float-right px-4'>wardrobe</li>
             </Link>
 
-            <Link to={'/randomoutfitform'}>
-              <li className='inline float-right px-4'>new outfit</li>
+            <Link to={'/my_outfits'}>
+              <li className='inline float-right px-4'>my outfits</li>
             </Link>
 
           </ul>

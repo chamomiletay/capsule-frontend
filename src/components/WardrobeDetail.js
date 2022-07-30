@@ -23,7 +23,6 @@ const WardrobeDetail = ({accessToken}) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MDk2ODI0LCJpYXQiOjE2NTkwOTY1MjQsImp0aSI6ImMyYmRmYjQyOTAxZTRiZDg4MjBjZjBiMGU3ZTgyNzc0IiwidXNlcl9pZCI6MX0.fSDBYplneXl-SOqTlaRRdvfgqXsRzqlNeTmajQGB3iM'
     const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
     const opts = {
       method: 'GET',

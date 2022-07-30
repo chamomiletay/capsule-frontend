@@ -23,7 +23,7 @@ const EditArticle = ({accessToken}) => {
   
   //----- define form data ! -----
   const [formData, setFormData] = useState({
-    user:'base_user',
+    user: userLoggedIn ? {userLoggedIn} : 'unknown',
     name:'',
     color:'',
     article_type:'',
@@ -31,8 +31,7 @@ const EditArticle = ({accessToken}) => {
     brand:'',
     quantity:''
   })
-  const [name, setName] = useState({name:''})
-  const [color, setColor] = useState({color:''})
+  // const [name, setName] = useState({name:''})
   // const [image, setImage] = useState({image: ''})
   
   useEffect(() => {
@@ -42,11 +41,11 @@ const EditArticle = ({accessToken}) => {
   const editArticle = async () => {
     let res= await fetch(`http://localhost:8000/wardrobe/${id}`)
     res = await res.json()
-    setName(res.name)
+    // setName(res.name)
   }
 
 const handleChange = (e) => {
-  setName({...name, [e.target.id]: e.target.value})
+  setFormData({...formData, [e.target.id]: e.target.value})
   console.log(e.target.id, e.target.value)
   // setImage({image: e.target.files[0]})
 }

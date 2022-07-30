@@ -16,7 +16,7 @@ import './Main.css'
         //- quantity
 //----- end brain dump . -----
 
-const EditArticle = ({accessToken}) => {
+const EditArticle = ({userLoggedIn}) => {
 
   const navigate = useNavigate()
   let {id} = useParams()

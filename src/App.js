@@ -74,7 +74,7 @@ function App() {
 
           <Route path='/randomoutfitform' element={userLoggedIn ? <RandomOutfitForm accessToken={accessToken}/> : <p>Sign in to access your wardrobe!</p>} />
 
-          <Route path='/edit_article/:id' element={<EditArticle />} />
+          <Route path='/edit_article/:id' element={<EditArticle userLoggedIn={userLoggedIn}/>} />
         
         
         </Routes>

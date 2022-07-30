@@ -82,7 +82,7 @@ function App() {
 
           <Route path='/generated_outfit' element={<RandomOutfit />} />
 
-          <Route path='/my_outfits' element={<MyOutfits />} />
+          <Route path='/my_outfits' element={userLoggedIn ? <MyOutfits userLoggedIn={userLoggedIn} accessToken={accessToken}/> : <p>Oops! Sign in to access your wardrobe!</p>} />
 
           {/* <Route path='/favoritedetail/:id' element={<OutfitDetail />} /> */}
         

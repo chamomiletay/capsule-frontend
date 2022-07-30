@@ -49,7 +49,7 @@ const handleChange = (e) => {
   //--- redirect upon submit ---
     navigate('/wardrobelist')
     // const url = process.env.REACT_APP_API_URL + 'wardrobe/'
-    const url = 'https://capsule-capstone.herokuapp.com/' + 'wardrobe/'
+    const url = 'https://capsule-capstone.herokuapp.com/wardrobe/'
     const opts = {
       method: 'POST',
       headers: {

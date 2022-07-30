@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MTU0NTE0LCJpYXQiOjE2NTkxNTQyMTQsImp0aSI6IjFmY2M1Mzc4YmYyZTRhZDFiODk4NzAxNGNhY2M2OTExIiwidXNlcl9pZCI6MX0.gmg3Gl11l6TK0-ODX6uDpHMeoMely6UGQibxh8qJvjs'
     // const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
-    const url = 'https://capsule-capstone.herokuapp.com/' + 'wardrobe_protected/'
+    const url = 'https://capsule-capstone.herokuapp.com/wardrobe_protected/'
     const opts = {
       method: 'GET',
       headers: {

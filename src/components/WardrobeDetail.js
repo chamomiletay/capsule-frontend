@@ -24,7 +24,7 @@ const WardrobeDetail = ({accessToken}) => {
 
   useEffect(() => {
     // const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
-    const url = 'https://capsule-capstone.herokuapp.com/' + `wardrobe/${id}`
+    const url = `https://capsule-capstone.herokuapp.com/wardrobe/${id}`
     const opts = {
       method: 'GET',
       headers: {

@@ -1,6 +1,9 @@
 import React from 'react'
 
 const MyOutfits = () => {
+
+  
+
   return (
     <div className='m-10'>
 

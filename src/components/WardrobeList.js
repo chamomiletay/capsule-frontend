@@ -15,7 +15,7 @@ const WardrobeList = ({accessToken}) => {
 
 
   //--- retreive data ---
-  const wardrobeRestEndpoint = 'wardrobe_protected/'
+  const wardrobeRestEndpoint = 'wardrobe/'
   const [wardrobe, setWardrobe] = useState([])
 
   useEffect(() => {

@@ -16,6 +16,7 @@ import RandomOutfitForm from './components/RandomOutfitForm';
 import RandomOutfit from './components/RandomOutfit';
 import EditArticle from './components/EditArticle';
 import MyOutfits from './components/MyOutfits';
+// import OutfitDetail from './components/OutfitDetail';
 
 
 //------ brain dump ------
@@ -33,7 +34,7 @@ function App() {
 
 //--- fetch wardrobe data (protected) ---
   useEffect(() => {
-    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MTU0NTE0LCJpYXQiOjE2NTkxNTQyMTQsImp0aSI6IjFmY2M1Mzc4YmYyZTRhZDFiODk4NzAxNGNhY2M2OTExIiwidXNlcl9pZCI6MX0.gmg3Gl11l6TK0-ODX6uDpHMeoMely6UGQibxh8qJvjs'
+    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MjAxNTQxLCJpYXQiOjE2NTkyMDEyNDEsImp0aSI6IjA4ZGZmMjRiZTdiMDQzMmM5Y2M1ZGNmOTJiYTU1MjNiIiwidXNlcl9pZCI6MX0.VPVv0A_q8DG-faZ_C7Ss5tUE9r6xRfOTCWgXo-MNpDQ'
     const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
     // const url = 'https://capsule-capstone.herokuapp.com/wardrobe_protected/'
     const opts = {
@@ -82,6 +83,8 @@ function App() {
           <Route path='/generated_outfit' element={<RandomOutfit />} />
 
           <Route path='/my_outfits' element={<MyOutfits />} />
+
+          {/* <Route path='/favoritedetail/:id' element={<OutfitDetail />} /> */}
         
         
         </Routes>

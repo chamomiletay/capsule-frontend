@@ -4,6 +4,7 @@ import './Main.css';
 
 const MyOutfits = () => {
 
+<<<<<<< HEAD
     const favoritesRestEndpoint = 'favorites/'
     const [favorite, setFavorite] = useState([])
 
@@ -24,6 +25,9 @@ const MyOutfits = () => {
           setFavorite(data)
         })
       }, [])
+=======
+  
+>>>>>>> b807c21 (Updated MyOutfits component with auth info)
 
   return (
     <div className='m-10'>

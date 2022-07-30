@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // import './Header.css';
 
 
-const Header = () => {
+const Header = ({userLoggedIn}) => {
   return (
     
       <div className='p-4 max-w-none mx-auto bg-blue-100 shadow-md flex items-center space-x-4'>
@@ -21,9 +21,11 @@ const Header = () => {
         <div className='flex-1'>
           <ul>
 
-            <Link to={'/login'}>
-              <li className='inline float-right px-4'>log in</li>
+            {/* display link as username if logged in */}
+            <Link to={ userLoggedIn ? `/profile/${userLoggedIn}` : '/login/'}>
+              {userLoggedIn ? <li className='inline float-right px-4'>{userLoggedIn}</li> : <li className='inline float-right px-4'>log in</li>}
             </Link>
+
 
             <Link to={'/wardrobelist'}>
               <li className='inline float-right px-4'>wardrobe</li>

@@ -6,9 +6,16 @@ import React from 'react'
   
 //----- end brain dump . -----
 
-const Profile = () => {
+const Profile = ({userLoggedIn}) => {
   return (
-    <div>Profile</div>
+    <div>
+
+      <div className='justify-center items-center bg-plants max-w-none m-16 max-h-500 py-8 border-double border-4 border-slate-500 rounded shadow-md'>
+
+      <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>{userLoggedIn}</h3>
+
+      </div>
+    </div>
   )
 }
 

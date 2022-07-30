@@ -6,17 +6,83 @@ import './Main.css'
     // - prompt user for username and password
 //----- end brain dump . -----
 
-const LogIn = () => {
+const LogIn = ({setAccessToken, setUserLoggedIn}) => {
+
+    //---- handle errors -----
+    const [networkError, setNetworkError] = useState(null)
+    const [clientError, setClientError] = useState(null)
 
     //----- define form info -----
     const [formInfo, setFormInfo] = useState({username: '', password: ''})
+
+    //--- check for status error ---
+    const statusError = (resp) => {
+        setNetworkError(`Network Error: ${resp.status} - Check that credentials are correct`)
+    }
+
+    //--- check that all fields are filled ---
+    const formValidate = (formInfo) => {
+        const blankTextField = Object.entries(formInfo).filter(kv => kv[1] === '')
+        if (blankTextField.length > 0) {
+            setClientError(`*${blankTextField[0][0]} cannot be left blank`)
+            return false
+        }
+        setClientError(null)
+        return true
+    }
+
 
     const handleChange = (e) => {
     setFormInfo({...formInfo, [e.target.id]: e.target.value})
     }
 
-    const handleLogin = (e) => {
 
+    const handleLogin = (e) => {
+        console.log(formInfo)
+        e.preventDefault()
+        setNetworkError(null)
+
+        //--- check for no validation errors ---
+        if (!formValidate(formInfo)) {
+            return
+        }
+
+        //--- define inputted username ---
+        const userName = formInfo.username
+
+        const tokenEndpoint = 'api/token/'
+        const reactApiUrl = process.env.REACT_APP_API_URL
+
+        //--- retrieve data ---
+        fetch (reactApiUrl + tokenEndpoint,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formInfo)
+            }
+        )
+            .then(res => {
+                if (res.ok) {
+                    return res.json()
+                } else {
+                    statusError(res)
+                    return Promise.resolve(null)
+                }
+            })
+            .then(data => {
+                if (!data) {
+                    console.log(`trouble retrieving data: ${networkError}`)
+                } else {
+                    console.log(data)
+                    setUserLoggedIn(userName)
+                    setAccessToken(data.access)
+
+                    localStorage.setItem('access_token', data.access)
+                    localStorage.setItem('user', userName)
+                }
+            })
     }
 
     return (
@@ -30,13 +96,18 @@ const LogIn = () => {
 
         {/*----- Login form -----*/}
         <div className='font-nanum-gothic justify-center items-center bg-red-50 max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded'>
-            <form onSubmit={{handleLogin}}>
+            <form onSubmit={handleLogin}>
                 <label>Username:</label>
                 <input className='ml-2 mr-6 shadow-md rounded pl-2' id='username' name='username' type='text' onChange={handleChange}/>
                 <label>Password:</label>
                 <input className='ml-2 mr-6 shadow-md rounded pl-2' id='password' name='password' type='text' onChange={handleChange}/>
                 <div className='mt-6'>
                     <button className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic bg-blue-100 shadow-md rounded border-solid border-2 border-blue-500 font-bold text-slate-700' type='submit'>Sign In</button>
+                
+                    {/* display error message to user */}
+                    <p className='pt-4 italic'>{networkError}</p>
+                    <p className='pt-4 italic'>{clientError}</p>
+
                 </div>
             </form>
         </div>

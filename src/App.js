@@ -1,6 +1,6 @@
 // ---- i m p o r t s ! ---- //
 import { Routes, Route } from 'react-router-dom'
-// import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 
 //-- component imports -- //
@@ -26,49 +26,54 @@ import EditArticle from './components/EditArticle';
 function App() {
 
   //--- user authentication checkpoint --- 
-  // const [userLoggedIn, setUserLoggedIn] = useState(localStorage.getItem('user'))
-  // const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
+  const [userLoggedIn, setUserLoggedIn] = useState(null)
+  const [accessToken, setAccessToken] = useState(null)
 
 //--- fetch wardrobe data (protected) ---
-  // useEffect(() => {
-  //   const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3Mjc0LCJpYXQiOjE2NTg1NjY5NzQsImp0aSI6IjcwMGNhNjQ0MTk0ZTQ1MzU4ODhmNjU5NzMxN2E1M2I5IiwidXNlcl9pZCI6MX0.Kug9ILabCBsCVfusiu94VUcEhQ3KaCIm5RlMnWO5mY0'
-  //   const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
-  //   const opts = {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${accessToken}`
-  //     }
-  //   }
-  //   fetch(url, opts)
-  //   .then(res => res.json())
-  //   //--- check that auth was successful ---
-  //   .then(data => console.log(data))
-  // })
+  useEffect(() => {
+    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MTU0NTE0LCJpYXQiOjE2NTkxNTQyMTQsImp0aSI6IjFmY2M1Mzc4YmYyZTRhZDFiODk4NzAxNGNhY2M2OTExIiwidXNlcl9pZCI6MX0.gmg3Gl11l6TK0-ODX6uDpHMeoMely6UGQibxh8qJvjs'
+    const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
+    const opts = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }
+    fetch(url, opts)
+    .then(res => res.json())
+    //--- check that auth was successful ---
+    .then(data => console.log(data))
+  })
 
   return (
     <div className="App">
 
 
-      <Header />
+      <Header userLoggedIn={userLoggedIn}/>
       
-      {/* {userLoggedIn ? (
-        <p>Welcome, {userLoggedIn}</p>
-      ): null 
-      } */}
       <div className='routes'>
         {/* Render routes below*/}
         <Routes>
 
           <Route path='/' element={<Main />} />
-          <Route path='/login' element={<LogIn />} />
+
+          <Route path='/login' element={<LogIn setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken} userLoggedIn={userLoggedIn}/>} />
+
           {/* <Route path='/profile/:id' element={<Profile setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken}/>} /> */}
-          <Route path='/profile/:id' element={<Profile />} />
-          {/* <Route path='/wardrobelist' element={<WardrobeList accessToken={accessToken}/>} /> */}
-          <Route path='/wardrobelist' element={<WardrobeList />} />
+
+          <Route path='/profile/:id' element={<Profile userLoggedIn={userLoggedIn}/>} />
+
+          <Route path='/wardrobelist' element={userLoggedIn ? <WardrobeList userLoggedIn={userLoggedIn} accessToken={accessToken}/> : <p>Sign in to access your wardrobe!</p>} />
+
+          {/* <Route path='/wardrobelist' element={<WardrobeList />} /> */}
+
           <Route path='/newarticle' element={<NewWardrobeItem />} />
+
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />
-          <Route path='/randomoutfitform' element={<RandomOutfitForm />} />
+
+          <Route path='/randomoutfitform' element={userLoggedIn ? <RandomOutfitForm accessToken={accessToken}/> : <p>Sign in to access your wardrobe!</p>} />
+
           <Route path='/edit_article/:id' element={<EditArticle />} />
         
         

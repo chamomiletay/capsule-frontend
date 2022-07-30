@@ -8,19 +8,18 @@ import './Main.css';
     //- add wardrobe item button on page -> links to NewWardrobeItem
 //----- end brain dump . -----
 
-const WardrobeList = () => {
+//----- pass accessToken in as prop -----//
+const WardrobeList = ({accessToken}) => {
 
   //--- auth data ---
-  const [userSignedIn, setUserSignedIn] = useState(localStorage.getItem('user'))
-  const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
+
 
   //--- retreive data ---
-  const wardrobeRestEndpoint = 'wardrobe'
+  const wardrobeRestEndpoint = 'wardrobe_protected/'
   const [wardrobe, setWardrobe] = useState([])
 
   useEffect(() => {
-    const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MDk2ODI0LCJpYXQiOjE2NTkwOTY1MjQsImp0aSI6ImMyYmRmYjQyOTAxZTRiZDg4MjBjZjBiMGU3ZTgyNzc0IiwidXNlcl9pZCI6MX0.fSDBYplneXl-SOqTlaRRdvfgqXsRzqlNeTmajQGB3iM'
-    const url = process.env.REACT_APP_API_URL + 'wardrobe_protected/'
+    const url = process.env.REACT_APP_API_URL + wardrobeRestEndpoint
     const opts = {
       method: 'GET',
       headers: {
@@ -38,6 +37,7 @@ const WardrobeList = () => {
 
 
   return (
+    
     <div>
 
         <div className='justify-center items-center bg-plants max-w-none m-16 max-h-500 py-4 border-double border-4 border-slate-500 rounded shadow-md'>

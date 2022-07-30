@@ -9,12 +9,12 @@ import './Main.css';
 //----- end brain dump . -----
 
 
-const WardrobeDetail = () => {
+const WardrobeDetail = ({accessToken}) => {
 
 
   //--- auth data ---
-  const [userSignedIn, setUserSignedIn] = useState(localStorage.getItem('user'))
-  const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
+  // const [userSignedIn, setUserSignedIn] = useState(localStorage.getItem('user'))
+  // const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'))
 
   let {id} = useParams()
 
@@ -24,12 +24,12 @@ const WardrobeDetail = () => {
 
   useEffect(() => {
     const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5MDk2ODI0LCJpYXQiOjE2NTkwOTY1MjQsImp0aSI6ImMyYmRmYjQyOTAxZTRiZDg4MjBjZjBiMGU3ZTgyNzc0IiwidXNlcl9pZCI6MX0.fSDBYplneXl-SOqTlaRRdvfgqXsRzqlNeTmajQGB3iM'
-    const url = process.env.REACT_APP_API_URL + `wardrobe_protected/${id}`
+    const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
     const opts = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`
+        // 'Authorization': `Bearer ${accessToken}`
       }
     }
     fetch(url, opts)

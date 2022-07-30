@@ -16,13 +16,15 @@ import './Main.css'
         //- quantity
 //----- end brain dump . -----
 
-const NewArticleForm = ({accessToken}) => {
+
+//----- pass userLoggedIn in as prop -----//
+const NewArticleForm = ({userLoggedIn}) => {
 
   const navigate = useNavigate()
 
 //----- define form data ! -----
   const [formData, setFormData] = useState({
-    user:'base_user',
+    user: userLoggedIn ? {userLoggedIn} : 'unknown',
     name:'',
     color:'',
     article_type:'',
@@ -51,7 +53,6 @@ const handleChange = (e) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${accessToken}`
       },
       body: JSON.stringify(formData)
       // body: formData

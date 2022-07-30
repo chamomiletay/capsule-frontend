@@ -1,6 +1,6 @@
 // ----- i m p o r t s ! -----
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Main.css'
 
 //----- brain dump -----
@@ -19,7 +19,6 @@ import './Main.css'
 const EditArticle = ({userLoggedIn}) => {
 
   const navigate = useNavigate()
-  let {id} = useParams()
   
   //----- define form data ! -----
   const [formData, setFormData] = useState({
@@ -34,15 +33,15 @@ const EditArticle = ({userLoggedIn}) => {
   // const [name, setName] = useState({name:''})
   // const [image, setImage] = useState({image: ''})
   
-  useEffect(() => {
-    editArticle()
-  }, [])
+  // useEffect(() => {
+  //   editArticle()
+  // }, [])
 
-  const editArticle = async () => {
-    let res= await fetch(`http://localhost:8000/wardrobe/${id}`)
-    res = await res.json()
-    // setName(res.name)
-  }
+  // const editArticle = async () => {
+  //   let res= await fetch(`http://localhost:8000/wardrobe/${id}`)
+  //   res = await res.json()
+  //   // setName(res.name)
+  // }
 
 const handleChange = (e) => {
   setFormData({...formData, [e.target.id]: e.target.value})

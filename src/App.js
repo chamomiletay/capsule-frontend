@@ -65,7 +65,7 @@ function App() {
 
           <Route path='/login' element={<LogIn setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken} userLoggedIn={userLoggedIn}/>} />
 
-          <Route path='/signup' element={<SignUp setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken} />} />
+          <Route path='/signup' element={<SignUp setUserLoggedIn={setUserLoggedIn} />} />
 
           <Route path='/profile/:id' element={<Profile userLoggedIn={userLoggedIn}/>} />
 

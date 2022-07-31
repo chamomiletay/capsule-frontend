@@ -36,7 +36,7 @@ const SignUp = ({setUserLoggedIn}) => {
         console.log(formInfo)
         e.preventDefault()
 
-        const userData = {...formInfo, email:''}
+        const userData = {...formInfo }
         console.log(userData)
 
         setNetworkError(null)
@@ -93,7 +93,7 @@ const SignUp = ({setUserLoggedIn}) => {
                 <label>Username:</label>
                 <input className='ml-2 mr-6 shadow-md rounded pl-2' id='username' name='username' type='text' onChange={handleChange}/>
                 <label>Password:</label>
-                <input className='ml-2 mr-6 shadow-md rounded pl-2' id='password' name='password' type='text' onChange={handleChange}/>
+                <input className='ml-2 mr-6 shadow-md rounded pl-2' id='password' name='username' type='text' onChange={handleChange}/>
                 <div className='mt-6'>
                     <button className='flex justify-center justify-items-center m-auto p-2 font-nanum-gothic bg-blue-100 shadow-md rounded border-solid border-2 border-blue-500 font-bold text-slate-700' type='submit'>Sign Up</button>
                 

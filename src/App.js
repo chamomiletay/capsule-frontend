@@ -12,11 +12,11 @@ import Profile from './components/Profile';
 import WardrobeList from './components/WardrobeList';
 import NewWardrobeItem from './components/NewArticleForm';
 import WardrobeDetail from './components/WardrobeDetail';
-import RandomOutfitForm from './components/RandomOutfitForm';
 import RandomOutfit from './components/RandomOutfit';
 import EditArticle from './components/EditArticle';
 import MyOutfits from './components/MyOutfits';
-// import OutfitDetail from './components/OutfitDetail';
+import CreateOutfit from './components/CreateOutfit'
+import OutfitDetail from './components/OutfitDetail';
 
 
 //------ brain dump ------
@@ -76,15 +76,15 @@ function App() {
 
           <Route path='/articledetail/:id' element={<WardrobeDetail />} />
 
-          <Route path='/randomoutfitform' element={userLoggedIn ? <RandomOutfitForm accessToken={accessToken}/> : <p>Oops! Sign in to access your wardrobe!</p>} />
-
           <Route path='/edit_article/:id' element={<EditArticle userLoggedIn={userLoggedIn}/>} />
 
           <Route path='/generated_outfit' element={<RandomOutfit />} />
 
           <Route path='/my_outfits' element={userLoggedIn ? <MyOutfits userLoggedIn={userLoggedIn} accessToken={accessToken}/> : <p>Oops! Sign in to access your wardrobe!</p>} />
 
-          {/* <Route path='/favoritedetail/:id' element={<OutfitDetail />} /> */}
+          <Route path='/create_outfit' element={<CreateOutfit />} />
+
+          <Route path='/favoritedetail/:id' element={<OutfitDetail />} />
         
         
         </Routes>

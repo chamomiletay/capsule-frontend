@@ -28,9 +28,14 @@ const MyOutfits = () => {
   return (
     <div className='m-10'>
 
-      <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>My Outfits</h3>
 
       <div className='justify-center items-center bg-plants max-w-none m-5 max-h-500 py-8 border-double border-4 border-slate-500 rounded shadow-md'>
+        
+      <h3 className='font-edu-vic-wa-nt-beginner text-3xl'>My Outfits</h3>
+
+      <Link to='/create_outfit'>
+              <button class='bg-sky-500 rounded text-white font-bold py-1 px-3 my-2 shadow-md'type='button'>Create Outfit</button>
+            </Link>
 
       <div className='justify-center items-center w-auto p-4'>
             <ul>

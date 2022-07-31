@@ -8,8 +8,8 @@ const MyOutfits = () => {
     const [favorite, setFavorite] = useState([])
 
     useEffect(() => {
-        const url = process.env.REACT_APP_API_URL + favoritesRestEndpoint
-        // const url = 'https://capsule-capstone.herokuapp.com/' + favoritesRestEndpoint
+        // const url = process.env.REACT_APP_API_URL + favoritesRestEndpoint
+        const url = 'https://capsule-capstone.herokuapp.com/' + favoritesRestEndpoint
         const opts = {
           method: 'GET',
           headers: {

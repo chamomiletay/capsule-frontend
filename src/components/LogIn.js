@@ -51,8 +51,8 @@ const LogIn = ({setAccessToken, setUserLoggedIn}) => {
         const userName = formInfo.username
 
         const tokenEndpoint = 'api/token/'
-        const reactApiUrl = process.env.REACT_APP_API_URL
-        // const reactApiUrl = 'https://capsule-capstone.herokuapp.com/'
+        // const reactApiUrl = process.env.REACT_APP_API_URL
+        const reactApiUrl = 'https://capsule-capstone.herokuapp.com/'
 
         //--- retrieve data ---
         fetch (reactApiUrl + tokenEndpoint,

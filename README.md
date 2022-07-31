@@ -42,7 +42,7 @@
 >
 > Attempting to implement **image uploads** was one of the biggest hurdles I faced. I'm proud of myself for sticking through it, but for the sake of getting data to render, 
 
-### ✨ Like what you see? Check out the app [*here!*](https://62dbec8f509fb612d3dcc7e8--tubular-begonia-a87560.netlify.app/)✨
-    Frontend: https://62dbec8f509fb612d3dcc7e8--tubular-begonia-a87560.netlify.app/
+### ✨ Like what you see? Check out the app [*here!*](https://tubular-begonia-a87560.netlify.app/)✨
+    Frontend: https://tubular-begonia-a87560.netlify.app/
 
     Backend: https://capsule-capstone.herokuapp.com/

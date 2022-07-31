@@ -48,8 +48,8 @@ const SignUp = ({setUserLoggedIn}) => {
 
         const signUpEndpoint = 'api/auth/signup/'
 
-        const reactApiUrl = process.env.REACT_APP_API_URL
-        // const reactApiUrl = 'https://capsule-capstone.herokuapp.com/'
+        // const reactApiUrl = process.env.REACT_APP_API_URL
+        const reactApiUrl = 'https://capsule-capstone.herokuapp.com/'
 
         //--- retrieve data ---
         fetch (reactApiUrl + signUpEndpoint,

@@ -45,8 +45,8 @@ const handleChange = (e) => {
 
   //--- redirect upon submit ---
     navigate('/my_outfits')
-    const url = process.env.REACT_APP_API_URL + 'favorites/'
-    // const url = 'https://capsule-capstone.herokuapp.com/favorites/'
+    // const url = process.env.REACT_APP_API_URL + 'favorites/'
+    const url = 'https://capsule-capstone.herokuapp.com/favorites/'
     const opts = {
       method: 'POST',
       headers: {

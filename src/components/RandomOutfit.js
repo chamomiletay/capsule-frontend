@@ -9,8 +9,8 @@ const RandomOutfit = () => {
     let {id} = useParams()
 
     useEffect(() => {
-        const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
-         // const url = `https://capsule-capstone.herokuapp.com/wardrobe/wardrobe`
+        // const url = process.env.REACT_APP_API_URL + `wardrobe/${id}`
+         const url = `https://capsule-capstone.herokuapp.com/wardrobe/wardrobe`
          const opts = {
            method: 'GET',
            headers: {

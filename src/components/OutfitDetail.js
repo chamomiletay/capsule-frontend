@@ -23,8 +23,8 @@ const OutfitDetail = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-   const url = process.env.REACT_APP_API_URL + `favorites/${id}`
-    // const url = `https://capsule-capstone.herokuapp.com/wardrobe/${id}`
+  //  const url = process.env.REACT_APP_API_URL + `favorites/${id}`
+    const url = `https://capsule-capstone.herokuapp.com/favorites/${id}`
     const opts = {
       method: 'GET',
       headers: {

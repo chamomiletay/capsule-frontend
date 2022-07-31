@@ -3,6 +3,10 @@
 
 ## Sneak Peek
 
+![Screen Shot 2022-07-30 at 11 28 46 PM](https://user-images.githubusercontent.com/97818396/182009201-44bf5ea9-1b46-46a4-b923-44383f4988b3.png)
+![Screen Shot 2022-07-30 at 11 29 02 PM](https://user-images.githubusercontent.com/97818396/182009203-f0a73c6e-297a-48b6-911a-4bf203eae91c.png)
+![Screen Shot 2022-07-30 at 11 30 03 PM](https://user-images.githubusercontent.com/97818396/182009205-c21e839d-77c6-4b4e-a8bb-57ed9902f0a9.png)
+![Screen Shot 2022-07-30 at 11 30 36 PM](https://user-images.githubusercontent.com/97818396/182009206-6e19f29c-cada-4c65-a651-fe66da29eb9d.png)
 
 
 ## Process Workflow

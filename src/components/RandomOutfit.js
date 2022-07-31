@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './Main.css';
 
 const RandomOutfit = () => {
@@ -24,7 +24,7 @@ const RandomOutfit = () => {
            console.log(data)
          })
          .catch(console.error)
-       }, []) 
+       }, ) 
 
        const randomItem = wardrobe[Math.floor(Math.random()*wardrobe.length)]
     //    console.log(randomItem.name)

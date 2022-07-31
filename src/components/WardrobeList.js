@@ -34,7 +34,7 @@ const WardrobeList = ({accessToken}) => {
       console.log(data)
       setWardrobe(data)
     })
-  }, [])
+  }, )
 
 
   return (

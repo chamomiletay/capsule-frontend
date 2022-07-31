@@ -38,7 +38,7 @@ const OutfitDetail = () => {
       console.log(data)
     })
     .catch(console.error)
-  }, []) 
+  }, ) 
 
   // console.log(wardrobe[0].name)
 

@@ -9,7 +9,7 @@ import './Main.css';
 //----- end brain dump . -----
 
 //----- pass accessToken in as prop -----//
-const WardrobeList = ({accessToken}) => {
+const WardrobeList = () => {
 
   //--- auth data ---
 
@@ -25,7 +25,7 @@ const WardrobeList = ({accessToken}) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`
+        // 'Authorization': `Bearer ${accessToken}`
       }
     }
     fetch(url, opts)

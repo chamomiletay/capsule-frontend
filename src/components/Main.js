@@ -28,6 +28,10 @@ function Main() {
 
         <div className="w-screen h-96 bg-fixed bg-center  justify-center items-center">
           <br/>
+          
+            <Link to='/signup'> Sign up today to unlock the potential of your Capsule wardrobe!</Link>
+            
+          <br/>
           <p>Already a user? 
             <Link to='/login'> Sign in</Link>
           </p>

@@ -17,6 +17,7 @@ import EditArticle from './components/EditArticle';
 import MyOutfits from './components/MyOutfits';
 import CreateOutfit from './components/CreateOutfit'
 import OutfitDetail from './components/OutfitDetail';
+import SignUp from './components/SignUp';
 
 
 //------ brain dump ------
@@ -64,7 +65,7 @@ function App() {
 
           <Route path='/login' element={<LogIn setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken} userLoggedIn={userLoggedIn}/>} />
 
-          {/* <Route path='/profile/:id' element={<Profile setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken}/>} /> */}
+          <Route path='/signup' element={<SignUp setUserLoggedIn={setUserLoggedIn} setAccessToken={setAccessToken} />} />
 
           <Route path='/profile/:id' element={<Profile userLoggedIn={userLoggedIn}/>} />
 
